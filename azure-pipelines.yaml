@@ -25,8 +25,7 @@ steps:
   displayName: Publish
   inputs:
     command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory) Music.Core'
     zipAfterPublish: True
 
 - task: PublishBuildArtifacts@1
