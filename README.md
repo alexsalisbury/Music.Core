@@ -15,7 +15,7 @@ Or via the .NET Core CLI:
     dotnet add package Music.Core
 
 ### Pre-release
-Install [pre-release packages via MyGet](https://www.nuget.org/packages/Music.Core).
+Install [pre-release packages via MyGet](https://www.myget.org/gallery/musiccore).
 
     Install-Package Music.Core -Source https://www.myget.org/F/musiccore/api/v3/index.jso
 
