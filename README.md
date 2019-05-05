@@ -21,3 +21,9 @@ Install [pre-release packages via MyGet](https://www.nuget.org/packages/Music.Co
 
 ## Contribution
 Feel free to create a pull request! :)
+
+## Apps built with Music.Core
+
+[GuitarHub](https://github.com/fredimachado/GuitarHub): Guitar Scale App built with WPF
+
+_Built something with Music.Core? Add to this Readme file and create a pull request._
