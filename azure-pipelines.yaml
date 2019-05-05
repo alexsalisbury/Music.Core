@@ -22,15 +22,24 @@ steps:
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: Publish
+  displayName: Pack
   inputs:
-    command: publish
-    publishWebProjects: False
-    projects: 'Music.Core'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    command: pack
+    configuration: '$(BuildConfiguration)'
+    packagesToPack: 'Music.Core/*.csproj'
+    packDirectory: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
+
+- task: DotNetCoreCLI@2
+  displayName: 'Push to MyGet'
+  inputs:
+    command: 'push'
+    nuGetFeedType: 'external'
+    packagesToPush: '$(build.artifactStagingDirectory)/*.nupkg'
+    publishFeedCredentials: 'MyGet'
+    condition: succeededOrFailed()
