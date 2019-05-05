@@ -1,3 +1,8 @@
+name: $(Rev:.r)
+
+variables:
+
+
 pool:
   name: Hosted Ubuntu 1604
 
@@ -21,13 +26,16 @@ steps:
     projects: '**/*[Tt]ests/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
+- powershell: './SetVersion.ps1'
+  displayName: 'Set Package Version'
+
 - task: DotNetCoreCLI@2
   displayName: Pack
   inputs:
-    command: pack
-    configuration: '$(BuildConfiguration)'
-    packagesToPack: 'Music.Core/*.csproj'
-    packDirectory: '$(build.artifactStagingDirectory)'
+    command: custom
+    custom: pack
+    projects: 'Music.Core/*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactStagingDirectory) -p:VersionPrefix=$(VersionPrefix) -p:VersionSuffix=$(VersionSuffix) -p:FileVersion=$(VersionFile) -p:ProductVersion=$(VersionProduct)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
