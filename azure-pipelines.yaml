@@ -35,11 +35,11 @@ steps:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
 
-- task: DotNetCoreCLI@2
+- task: NuGetCommand@2
   displayName: 'Push to MyGet'
   inputs:
     command: 'push'
-    nuGetFeedType: 'external'
     packagesToPush: '$(build.artifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'external'
     publishFeedCredentials: 'MyGet'
-    condition: succeededOrFailed()
+    condition: succeeded()
