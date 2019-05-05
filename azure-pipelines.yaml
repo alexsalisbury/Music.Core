@@ -1,7 +1,4 @@
-name: $(Rev:.r)
-
-variables:
-
+name: $(Rev:r)
 
 pool:
   name: Hosted Ubuntu 1604
