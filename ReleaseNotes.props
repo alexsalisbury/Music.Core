@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <PackageReleaseNotes Condition="'$(VersionPrefix)' == '1.0.0'">
+        <![CDATA[
+First version:
+* Intervals
+* Notes
+* Scale families (Chromatic, Diatonic and Pentatonic)
+* Scale definitions
+* Fretboard
+]]>
+    </PackageReleaseNotes>
+  </PropertyGroup>
+</Project>

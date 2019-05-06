@@ -1,0 +1,19 @@
+<Project>
+
+  <Import Project="Version.props" />
+  <Import Project="ReleaseNotes.props"/>
+
+  <PropertyGroup>
+    <Authors>Fredi Machado</Authors>
+    <Description>Simple cross-platform Music Library written in C# targeting .NET Standard 2.0</Description>
+    <Copyright>Copyright © Fredi Machado</Copyright>
+    <Product>Music.Core</Product>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/fredimachado/Music.Core</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/fredimachado/Music.Core</PackageProjectUrl>
+    <PackageLicense>https://github.com/fredimachado/Music.Core/blob/master/LICENSE</PackageLicense>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>

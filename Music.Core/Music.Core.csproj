@@ -2,16 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>Simple cross-platform Music Library written in C# targeting .NET Standard 2.0</Description>
-    <Copyright>Copyright © 2019 - Fredi Machado</Copyright>
-    <Authors>Fredi Machado</Authors>
     <AssemblyName>Music.Core</AssemblyName>
     <PackageId>Music.Core</PackageId>
     <PackageTags>music</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/fredimachado/Music.Core</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/fredimachado/Music.Core</PackageProjectUrl>
-    <PackageLicense>https://github.com/fredimachado/Music.Core/blob/master/LICENSE</PackageLicense>
     <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
 

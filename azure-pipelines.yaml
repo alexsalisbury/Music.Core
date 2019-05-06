@@ -23,16 +23,13 @@ steps:
     projects: '**/*[Tt]ests/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
-- powershell: './SetVersion.ps1'
-  displayName: 'Set Package Version'
-
 - task: DotNetCoreCLI@2
   displayName: Pack
   inputs:
-    command: custom
-    custom: pack
-    projects: 'Music.Core/*.csproj'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactStagingDirectory) -p:VersionPrefix=$(VersionPrefix) -p:VersionSuffix=$(VersionSuffix) -p:FileVersion=$(VersionFile) -p:ProductVersion=$(VersionProduct)'
+    command: pack
+    configuration: '$(BuildConfiguration)'
+    packagesToPack: 'Music.Core/*.csproj'
+    packDirectory: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
