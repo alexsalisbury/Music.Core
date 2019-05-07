@@ -3,14 +3,19 @@
     <VersionPrefix>1.0.1</VersionPrefix>
     <VersionSuffix></VersionSuffix>
 
-    <BuildNumber Condition=" '$(BuildNumber)' == '' ">$(BUILD_BUILDNUMBER)</BuildNumber>
-    <BuildNumber Condition=" '$(BuildNumber)' == '' ">0</BuildNumber>
-
+    <IsTagBuild Condition="$(BUILD_SOURCEBRANCH.StartsWith('refs/tags/'))">true</IsTagBuild>
+    <BuildNumber Condition="'$(BuildNumber)' == ''">$(BUILD_BUILDNUMBER)</BuildNumber>
+    <BuildNumber Condition="'$(BuildNumber)' == ''">0</BuildNumber>
     <PullRequestNumber>$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)</PullRequestNumber>
     <PullRequestNumber Condition="'$(PullRequestNumber)' == ''">$(SYSTEM_PULLREQUEST_PULLREQUESTID)</PullRequestNumber>
-    <VersionSuffix Condition="'$(BUILD_REASON)' == 'PullRequest'">-PR$(PullRequestNumber)</VersionSuffix>
+    <RepositoryCommit>$(BUILD_SOURCEVERSION)</RepositoryCommit>
 
+    <VersionSuffix Condition="'$(VersionSuffix)' == '' And '$(IsTagBuild)' != 'true'">beta</VersionSuffix>
+    <VersionSuffix Condition="'$(VersionSuffix)' != ''">$(VersionSuffix).$(BuildNumber)</VersionSuffix>
+    <VersionSuffix Condition="'$(BUILD_REASON)' == 'PullRequest'">-PR$(PullRequestNumber)</VersionSuffix>
     <FileVersion>$(VersionPrefix).$(BuildNumber)</FileVersion>
-    <PackageVersion>$(VersionPrefix)$(VersionSuffix)</PackageVersion>
+    <PackageVersion>$(VersionPrefix)</PackageVersion>
+    <PackageVersion Condition="'$(IsTagBuild)' != 'true'">$(PackageVersion)-$(VersionSuffix)</PackageVersion>
+    <InformationalVersion Condition="'$(RepositoryCommit)' != ''">$(PackageVersion)+$(RepositoryCommit)</InformationalVersion>
   </PropertyGroup>
 </Project>
