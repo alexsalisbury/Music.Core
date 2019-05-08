@@ -7,7 +7,7 @@
 [![MyGet (with prereleases)](https://img.shields.io/myget/musiccore/vpre/music.core.svg?label=myget)](https://www.myget.org/feed/musiccore/package/nuget/Music.Core)
 [![MyGet downloads](https://img.shields.io/myget/musiccore/dt/Music.Core.svg?label=myget%20downloads)](https://www.myget.org/feed/musiccore/package/nuget/Music.Core)
 
-Simple cross-platform Music Library written in C# targeting .NET Standard 2.0
+Simple cross-platform Music Library written in C# targeting .NET Standard 2.0 and .NET Framework 4.6
 
 ## Installing Music.Core
 

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageReleaseNotes Condition="'$(VersionPrefix)' == '1.0.3'">
         <![CDATA[
-Switched back to .NET Standard 2.0 since consuming the library in projects targetting .NET Framework 4.7.1 or below was causing issues
+Switched back to .NET Standard 2.0 but added .NET Framework 4.6 as an additional target
 ]]>
     </PackageReleaseNotes>
     <PackageReleaseNotes Condition="'$(VersionPrefix)' == '1.0.2'">
