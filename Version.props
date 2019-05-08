@@ -12,7 +12,7 @@
 
     <VersionSuffix Condition="'$(VersionSuffix)' == '' And '$(IsTagBuild)' != 'true'">beta</VersionSuffix>
     <VersionSuffix Condition="'$(VersionSuffix)' != ''">$(VersionSuffix).$(BuildNumber)</VersionSuffix>
-    <VersionSuffix Condition="'$(BUILD_REASON)' == 'PullRequest'">-PR$(PullRequestNumber)</VersionSuffix>
+    <VersionSuffix Condition="'$(BUILD_REASON)' == 'PullRequest'">PR$(PullRequestNumber)</VersionSuffix>
     <FileVersion>$(VersionPrefix).$(BuildNumber)</FileVersion>
     <PackageVersion>$(VersionPrefix)</PackageVersion>
     <PackageVersion Condition="'$(IsTagBuild)' != 'true'">$(PackageVersion)-$(VersionSuffix)</PackageVersion>
