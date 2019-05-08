@@ -1,5 +1,10 @@
 <Project>
   <PropertyGroup>
+    <PackageReleaseNotes Condition="'$(VersionPrefix)' == '1.0.2'">
+        <![CDATA[
+Changed Fretboard's StringNotes property type to ScaleNote so there's more information about the note in relation to the current scale
+]]>
+    </PackageReleaseNotes>
     <PackageReleaseNotes Condition="'$(VersionPrefix)' == '1.0.1'">
         <![CDATA[
 Switched to .NET Standard 1.3 so it can be referenced in projects targetting .NET Framework 4.6+
