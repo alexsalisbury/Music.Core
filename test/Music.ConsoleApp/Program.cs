@@ -81,13 +81,13 @@ namespace Music.ConsoleApp
         {
             foreach (var fretNote in fretboard.StringNotes)
             {
-                WriteColor(fretNote[0].ToString().PadRight(3, ' '), GetNoteColor(fretNote[0], scale));
+                WriteColor(fretNote[0].ToString().PadRight(3, ' '), GetNoteColor(fretNote[0].Note, scale));
                 Console.Write("|");
                 for (int i = 1; i < fretNote.Length; i++)
                 {
                     Console.Write("-");
                     var note = fretNote[i].ToString();
-                    WriteColor(note, GetNoteColor(fretNote[i], scale));
+                    WriteColor(note, GetNoteColor(fretNote[i].Note, scale));
                     var separator = new string('-', 3 - note.Length) + "|";
                     Console.Write(separator);
                 }
