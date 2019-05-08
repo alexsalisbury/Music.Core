@@ -84,6 +84,7 @@ namespace Music.Core
         public int ScaleDegree { get; }
         public bool IsPresent { get; }
         public IntervalTableItem Interval { get; }
+        public string Description { get; }
 
         internal ScaleNote(ScaleBase scale, Note note, int degree, bool isPresent, IntervalTableItem intervalTable)
         {
@@ -92,6 +93,7 @@ namespace Music.Core
             ScaleDegree = degree;
             IsPresent = isPresent;
             Interval = intervalTable;
+            Description = $"{Note} / {Interval.IntervalQuality}";
         }
 
         public override string ToString() => Note.ToString();
