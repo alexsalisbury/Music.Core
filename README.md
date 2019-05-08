@@ -1,6 +1,7 @@
 # :musical_note: Music.Core
 
 [![Build Status](https://dev.azure.com/FrediMachado/Music.Core/_apis/build/status/Music.Core-CI?branchName=master)](https://dev.azure.com/FrediMachado/Music.Core/_build/latest?definitionId=8&branchName=master)
+[![License](https://img.shields.io/github/license/fredimachado/Music.Core.svg)](https://github.com/fredimachado/Music.Core/blob/master/LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Music.Core.svg)](https://www.nuget.org/packages/Music.Core)
 [![NuGet downloads](https://img.shields.io/nuget/dt/Music.Core.svg?label=nuget%20downloads)](https://www.nuget.org/packages/Music.Core)
 [![MyGet (with prereleases)](https://img.shields.io/myget/musiccore/vpre/music.core.svg?label=myget)](https://www.myget.org/feed/musiccore/package/nuget/Music.Core)
