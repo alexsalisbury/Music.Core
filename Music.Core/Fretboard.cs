@@ -34,7 +34,7 @@ namespace Music.Core
                 var scaleNote = s[0];
                 var openNoteIndex = scaleNote.Note.Index;
 
-                for (int i = 0; i < NumberOfFrets; i++)
+                for (int i = 1; i < NumberOfFrets; i++)
                 {
                     var noteIndex = (openNoteIndex + i) % 12;
                     scaleNote = scale.ChromaticNotes.First(x => x.Note.Index == noteIndex);
