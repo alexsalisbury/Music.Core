@@ -1,5 +1,13 @@
 name: $(Rev:r)
 
+trigger:
+  tags:
+    include:
+    - v*
+  branches:
+    include:
+    - '*'
+
 pool:
   name: Hosted Ubuntu 1604
 
