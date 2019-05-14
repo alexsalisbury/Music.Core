@@ -9,6 +9,7 @@ namespace Music.Core
         public string Name { get; }
         public NoteLabel Label { get; }
         public Note Natural { get; }
+        public string Description { get; }
 
         internal Note(int index, string name)
             : this(index, name, MusicNoteLabels.Major)
@@ -20,6 +21,7 @@ namespace Music.Core
             Index = index;
             Name = name;
             Label = label;
+            Description = Name + label.Label;
         }
 
         internal Note(int index, string name, NoteLabel label, Note natural)
@@ -28,7 +30,7 @@ namespace Music.Core
             Natural = natural;
         }
 
-        public override string ToString() =>  Name + Label.Label;
+        public override string ToString() => Description;
     }
 
     public static class MusicNoteLabels
