@@ -93,7 +93,7 @@ namespace Music.Core
             ScaleDegree = degree;
             IsPresent = isPresent;
             Interval = intervalTable;
-            Description = $"{Note} / {Interval.IntervalQuality}";
+            Description = $"{Note} / {Interval}";
         }
 
         public override string ToString() => Note.ToString();

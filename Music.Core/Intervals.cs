@@ -1,8 +1,9 @@
+using System.Collections.Generic;
+
 namespace Music.Core
 {
     public static class Intervals
     {
-
         public static readonly IntervalTableItem[,] IntervalTable = new IntervalTableItem[12, 2]
         {
             { new IntervalTableItem(0, 0, IntervalQuality.P1), new IntervalTableItem(0, 1, IntervalQuality.d2) },
@@ -32,6 +33,33 @@ namespace Music.Core
             ScaleDegree = scaleDegree;
             IntervalQuality = intervalType;
         }
+
+        public override string ToString() => IntervalDescription[IntervalQuality];
+
+        private static readonly Dictionary<IntervalQuality, string> IntervalDescription = new Dictionary<IntervalQuality, string>
+        {
+            { IntervalQuality.P1, "Perfect Unison" },
+            { IntervalQuality.m2, "Minor 2nd" },
+            { IntervalQuality.M2, "Major 2nd" },
+            { IntervalQuality.A2, "Augmented 2nd" },
+            { IntervalQuality.d3, "Diminished 3rd" },
+            { IntervalQuality.m3, "Minor 3rd" },
+            { IntervalQuality.M3, "Major 3rd" },
+            { IntervalQuality.A3, "Augmented 3rd" },
+            { IntervalQuality.d4, "Diminished 4th" },
+            { IntervalQuality.P4, "Perfect 4th" },
+            { IntervalQuality.A4, "Augmented 4th" },
+            { IntervalQuality.d5, "Diminished 5th" },
+            { IntervalQuality.P5, "Perfect 5th" },
+            { IntervalQuality.A5, "Augmented 5th" },
+            { IntervalQuality.d6, "Diminished 6th" },
+            { IntervalQuality.m6, "Minor 6th" },
+            { IntervalQuality.M6, "Major 6th" },
+            { IntervalQuality.A6, "Augmented 6th" },
+            { IntervalQuality.d7, "Diminished 7th" },
+            { IntervalQuality.m7, "Minor 7th" },
+            { IntervalQuality.M7, "Major 7th" }
+        };
     }
 
     public enum IntervalQuality
